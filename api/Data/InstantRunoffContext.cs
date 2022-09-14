@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using shared;
 
+
 namespace elections.Data
 {
     public partial class InstantRunoffContext : DbContext

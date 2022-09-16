@@ -1,4 +1,5 @@
-using elections.Data;
+//using elections.Data;
+using shared;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

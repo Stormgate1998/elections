@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace shared
+namespace elections.Data
 {
     public partial class CandidateOie
     {
         public CandidateOie()
         {
             BallotPrefs = new HashSet<BallotPref>();
-            Tabulationresult1s = new HashSet<Tabulationresult1>();
+            Tabulationresults = new HashSet<Tabulationresult>();
         }
 
         public int Id { get; set; }
@@ -23,6 +23,6 @@ namespace shared
         public virtual OfficeInElection? Oie { get; set; }
         public virtual Party? Party { get; set; }
         public virtual ICollection<BallotPref> BallotPrefs { get; set; }
-        public virtual ICollection<Tabulationresult1> Tabulationresult1s { get; set; }
+        public virtual ICollection<Tabulationresult> Tabulationresults { get; set; }
     }
 }

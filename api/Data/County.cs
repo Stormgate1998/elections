@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace shared
+namespace elections.Data
 {
     public partial class County
     {
         public County()
         {
-            Office1s = new HashSet<Office1>();
+            Offices = new HashSet<Office>();
         }
 
         public int Id { get; set; }
@@ -18,6 +18,6 @@ namespace shared
         public string? ContactEmail { get; set; }
         public string? ContactPhone { get; set; }
 
-        public virtual ICollection<Office1> Office1s { get; set; }
+        public virtual ICollection<Office> Offices { get; set; }
     }
 }

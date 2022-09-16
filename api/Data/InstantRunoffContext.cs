@@ -14,7 +14,7 @@ public partial class InstantRunoffContext : DbContext
     {
     }
 
-    S
+    
     public virtual DbSet<Ballot> Ballots { get; set; } = null!;
     public virtual DbSet<BallotPref> BallotPrefs { get; set; } = null!;
     public virtual DbSet<Candidate> Candidates { get; set; } = null!;

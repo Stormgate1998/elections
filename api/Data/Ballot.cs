@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace shared
+namespace elections.Data
 {
     public partial class Ballot
     {
         public Ballot()
         {
-            BallotPref1s = new HashSet<BallotPref1>();
+            BallotPrefs = new HashSet<BallotPref>();
         }
 
         public int Id { get; set; }
@@ -15,6 +15,6 @@ namespace shared
         public string? Precinctinfo { get; set; }
         public DateTime? CastTimestamp { get; set; }
 
-        public virtual ICollection<BallotPref1> BallotPref1s { get; set; }
+        public virtual ICollection<BallotPref> BallotPrefs { get; set; }
     }
 }

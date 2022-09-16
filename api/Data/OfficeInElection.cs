@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace shared
+namespace elections.Data
 {
     public partial class OfficeInElection
     {
@@ -12,10 +12,10 @@ namespace shared
 
         public int Id { get; set; }
         public int? OfficeId { get; set; }
-        public int? ElectionId { get; set; }
+        public int ElectionId { get; set; }
         public int? Quantity { get; set; }
 
-        public virtual Election? Election { get; set; }
+        public virtual Election Election { get; set; } = null!;
         public virtual Office? Office { get; set; }
         public virtual ICollection<CandidateOie> CandidateOies { get; set; }
     }

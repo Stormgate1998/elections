@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace shared
+namespace elections.Data
 {
-    public partial class County1
+    public partial class City
     {
-        public County1()
+        public City()
         {
             Offices = new HashSet<Office>();
         }
 
         public int Id { get; set; }
-        public string? CountyName { get; set; }
-        public string? CountyDescription { get; set; }
+        public string? CityName { get; set; }
+        public string? CityDescription { get; set; }
         public string? ContactTitle { get; set; }
         public string? ContactName { get; set; }
         public string? ContactEmail { get; set; }

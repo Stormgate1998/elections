@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace shared
+namespace elections.Data
 {
     public partial class BallotPref
     {
@@ -10,7 +10,7 @@ namespace shared
         public int? PreferenceNum { get; set; }
         public int? CandidateOieId { get; set; }
 
-        public virtual Ballot1? Ballot { get; set; }
+        public virtual Ballot? Ballot { get; set; }
         public virtual CandidateOie? CandidateOie { get; set; }
     }
 }

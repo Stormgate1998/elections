@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace shared
+namespace elections.Data
 {
-    public partial class Election1
+    public partial class Election
     {
-        public Election1()
+        public Election()
         {
-            CandidateOffices = new HashSet<CandidateOffice>();
+            OfficeInElections = new HashSet<OfficeInElection>();
         }
 
         public int Id { get; set; }
@@ -16,6 +16,6 @@ namespace shared
         public DateOnly? PollDate { get; set; }
         public bool Ballotingclosed { get; set; }
 
-        public virtual ICollection<CandidateOffice> CandidateOffices { get; set; }
+        public virtual ICollection<OfficeInElection> OfficeInElections { get; set; }
     }
 }

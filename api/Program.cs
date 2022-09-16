@@ -5,12 +5,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddRazorPages();
+builder.Services.AddDbContext<InstantRunoffContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("local")));
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<InstantRunoffContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("db")));
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,5 +26,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapGet("/test", async (InstantRunoffContext context) => await context.Cities.ToListAsync());
 
 app.Run();

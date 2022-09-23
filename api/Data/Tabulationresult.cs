@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace shared
+namespace elections.Data
 {
-    public partial class Tabulationresult1
+    public partial class Tabulationresult
     {
         public int Id { get; set; }
         public int? CandidateOieId { get; set; }

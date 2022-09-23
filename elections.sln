@@ -8,12 +8,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "elections", "api\elections.
 		{8A555EBE-776A-45DF-8FAA-E73691069B5D} = {8A555EBE-776A-45DF-8FAA-E73691069B5D}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web", "web\web.csproj", "{D288F495-2773-40ED-A7CF-8D3251F96319}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "web", "web\web.csproj", "{D288F495-2773-40ED-A7CF-8D3251F96319}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8A555EBE-776A-45DF-8FAA-E73691069B5D} = {8A555EBE-776A-45DF-8FAA-E73691069B5D}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shared", "shared\shared.csproj", "{8A555EBE-776A-45DF-8FAA-E73691069B5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "shared", "shared\shared.csproj", "{8A555EBE-776A-45DF-8FAA-E73691069B5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,5 @@
-using elections.Data;
+//using elections.Data;
+using shared;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<InstantRunoffContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("local")));
+builder.Services.AddDbContext<InstantRunoffContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("amazon")));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

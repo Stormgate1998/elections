@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using shared;
+
 public partial class InstantRunoffContext : DbContext
+
 {
     public InstantRunoffContext()
     {

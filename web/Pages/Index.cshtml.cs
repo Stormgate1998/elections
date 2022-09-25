@@ -28,6 +28,30 @@ namespace web.Pages
          * Add "ContactsApi": "https://localhost:(?) to appsetting.json
          * 
          * <a asp page="Error"> go to error page</a>
+         * 
+         * add electioncontroller
+         * add ballotcontroller
+         * Use book information
+         * 
+         * public async Task OnPostCloseBallots() 
+         * {
+         * _logger.LogInFormatin("Someone wants to close ballots");
+         * await apiService.CloseBallotingAsync();
+         * }
+         * 
+         * in APIService
+         * internal async Task CloseBallotingAsync()
+         * {
+         * string url = "api line
+         * await http.PostAsync(url, null);
+         * }
+         * 
+         * Add electioncontroller
+         * use 4 pages?
+         * if closed, don't show the html for links?
+         * makes it easier possibly?
          */
+
+
     }
 }

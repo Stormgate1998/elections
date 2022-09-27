@@ -7,19 +7,39 @@ namespace web.Pages
 {
     public class IndexModel : PageModel
     {
+        public bool IsOpen;
         private readonly ILogger<IndexModel> _logger;
+        private readonly IConfiguration config;
+        private readonly HttpClient http;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, IConfiguration config, HttpClient http)
         {
             _logger = logger;
+            this.config = config;
+            this.http = http;
         }
 
-        public void OnGet()
+        public IEnumerable<Ballot>? Ballots { get; private set; }
+        public async Task OnGet()
         {
-            //app.MapGet("/test", async (InstantRunoffContext context) => await context.Cities.ToListAsync());
+            string apiHost = config["amazon"];
+            string url = $"{apiHost}/api/election/1/isopen";
+            var isOpen = await http.GetStringAsync(url);
+            IsOpen = isOpen == "true";
+            
+            //Ballots = await http.GetFromJsonAsync<IEnumerable<Ballot>>(url);
+        }
+
+       /* public async Task OnPostAddItem()
+        { 
+        
         }
 
 
+        public async Task OnPostDeleteItem()
+        {
+
+        }*/
         /*
          * Function here, uses api, runs 'test'.
          * 

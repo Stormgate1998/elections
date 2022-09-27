@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.EntityFrameworkCore;
+using shared;
+using elections.Controllers;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace elections.Controllers
@@ -9,7 +11,25 @@ namespace elections.Controllers
     public class ElectionController : ControllerBase
     {
         // GET: api/<ElectionController>
-        [HttpGet]
+        private readonly InstantRunoffContext context;
+
+        public ElectionController(InstantRunoffContext context)
+        {
+            this.context = context;
+        }
+        
+        
+        [HttpGet("{electionid}/isopen")]
+            public async Task<string> IsOpen(int electionid)
+        {
+            var row = context.Elections.Where(e => e.Id == electionid);
+            return row.Ballotingclosed;
+            await context.SaveChangesAsync();
+        }
+        
+        
+        
+        
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
@@ -27,11 +47,37 @@ namespace elections.Controllers
         public void Post([FromBody] string value)
         {
         }
+        public bool Ballotexists(int id)
+        {
+
+        }
 
         // PUT api/<ElectionController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> PutBallot(int id, Ballot ballot)
         {
+            if (id != ballot.Id)
+            {
+                return BadRequest();
+            }
+
+            context.Entry(ballot).State = EntityState.Modified;
+
+            try
+            {
+                await context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!BallotExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         // DELETE api/<ElectionController>/5
